@@ -1,0 +1,11 @@
+{
+  "report_name": "report-templatex",
+  "title": "{{ cookiecutter.report_name }}",
+  "your_id": "00000",
+  "your_name": "XXXXX",
+  "deadline": "2023.01.01",
+  "_copy_without_render": [
+    "preamble.tex",
+    "macros.tex"
+  ]
+}

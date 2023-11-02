@@ -1,0 +1,41 @@
+% キャプション名を変更する
+\newcounter{programcount}
+\setcounter{programcount}{0}
+\lstnewenvironment{program}[2]
+{
+    \renewcommand{\lstlistingname}{リスト}
+    \setcounter{lstlisting}{\theprogramcount}
+    \refstepcounter{programcount}
+    \lstset{
+        label={#1},
+        caption={#2},
+        language=sql,
+        breaklines=true,
+        basicstyle=\ttfamily\small,
+        commentstyle=\textit,
+        classoffset=1,
+        keywordstyle=\bfseries,
+        frame=tb,
+        framesep=5pt,
+        showstringspaces=false,
+        numbers=left,
+        stepnumber=1,
+        numberstyle=\small,
+        tabsize=4
+    }
+}{}
+
+% 画像を貼る
+\newcommand{\fig}[4]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=#2]{#1}
+        \caption{#3}
+        \label{#4}
+    \end{figure}
+}
+
+\newcommand{\Image}[1]{図\ref{img:#1}}
+\newcommand{\Tab}[1]{表\ref{tab:#1}}
+\newcommand{\Eq}[1]{式\eqref{eq:#1}}
+\newcommand{\List}[1]{リスト\ref{list:#1}}
